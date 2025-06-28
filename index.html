@@ -395,11 +395,53 @@
             opacity: 0;
             transition: opacity 0.4s ease;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            gap: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .portfolio-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .portfolio-btn {
+            padding: 10px 20px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .portfolio-btn:hover {
+            background: white;
+            color: var(--primary-red);
+            transform: translateY(-2px);
+        }
+
+        .portfolio-btn.call-btn {
+            background: var(--golden-yellow);
+            border-color: var(--golden-yellow);
+            color: var(--primary-red);
+        }
+
+        .portfolio-btn.call-btn:hover {
+            background: white;
+            border-color: white;
+            color: var(--primary-red);
         }
 
         .portfolio-item:hover .portfolio-overlay {
@@ -451,27 +493,79 @@
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 4rem;
             margin-top: 3rem;
         }
 
         .contact-info {
-            padding: 2rem;
+            padding: 3rem;
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .contact-info h3 {
             color: var(--golden-yellow);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 35px;
+            background: linear-gradient(135deg, var(--golden-yellow), var(--warm-orange));
+            color: var(--primary-red);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 210, 63, 0.4);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 210, 63, 0.6);
+            background: linear-gradient(135deg, #FFE066, var(--golden-yellow));
+        }
+
+        .contact-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .contact-btn.whatsapp:hover {
+            background: linear-gradient(135deg, #2BE373, #25D366);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
         }
 
         .contact-item {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 2.5rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
             padding: 1.5rem;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
             border-radius: 15px;
             border-left: 4px solid var(--golden-yellow);
         }
@@ -645,29 +739,29 @@
             scroll-behavior: smooth;
         }
 
-        /* Portfolio images */
-        .terrace-1 { 
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%234a90e2;stop-opacity:1" /><stop offset="100%" style="stop-color:%2387ceeb;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23sky)" width="400" height="280"/><rect fill="%23228b22" x="0" y="220" width="400" height="60"/><rect fill="%23d4a574" x="50" y="170" width="300" height="50"/><rect fill="%238b4513" x="60" y="130" width="15" height="40"/><rect fill="%238b4513" x="120" y="130" width="15" height="40"/><rect fill="%238b4513" x="180" y="130" width="15" height="40"/><rect fill="%238b4513" x="240" y="130" width="15" height="40"/><rect fill="%238b4513" x="300" y="130" width="15" height="40"/><rect fill="%23696969" x="40" y="110" width="320" height="20"/><rect fill="rgba(255,255,255,0.7)" x="50" y="115" width="300" height="10"/></svg>');
+        /* Portfolio images - rzeczywiste zdjęcia */
+        .taras-nad-woda-1 { 
+            background-image: url('images/taras-nad-woda-1.jpg');
         }
         
-        .house-extension { 
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%2387ceeb" width="400" height="280"/><rect fill="%23f5f5dc" x="50" y="120" width="150" height="100"/><rect fill="%23696969" x="50" y="100" width="150" height="20"/><rect fill="%23d4a574" x="220" y="140" width="100" height="80"/><rect fill="%238b4513" x="230" y="160" width="15" height="40"/><rect fill="%238b4513" x="255" y="160" width="15" height="40"/><rect fill="%238b4513" x="280" y="160" width="15" height="40"/><rect fill="%23228b22" x="0" y="220" width="400" height="60"/></svg>');
+        .taras-nad-woda-2 { 
+            background-image: url('images/taras-nad-woda-2.jpg');
         }
         
-        .garage-roof { 
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%2387ceeb" width="400" height="280"/><rect fill="%238b4513" x="50" y="170" width="20" height="60"/><rect fill="%238b4513" x="130" y="170" width="20" height="60"/><rect fill="%238b4513" x="250" y="170" width="20" height="60"/><rect fill="%238b4513" x="330" y="170" width="20" height="60"/><rect fill="%23696969" x="30" y="150" width="340" height="20"/><rect fill="%23228b22" x="0" y="230" width="400" height="50"/></svg>');
+        .wiata-las-1 { 
+            background-image: url('images/wiata-las-1.jpg');
         }
         
-        .forest-garage { 
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%2387ceeb" width="400" height="280"/><rect fill="%23228b22" x="0" y="200" width="400" height="80"/><circle fill="%23006400" cx="50" cy="170" r="30"/><circle fill="%23006400" cx="350" cy="160" r="25"/><circle fill="%23006400" cx="100" cy="140" r="20"/><rect fill="%23d4a574" x="150" y="180" width="100" height="50"/><rect fill="%238b4513" x="160" y="160" width="15" height="30"/><rect fill="%238b4513" x="185" y="160" width="15" height="30"/><rect fill="%238b4513" x="210" y="160" width="15" height="30"/><rect fill="%238b4513" x="235" y="160" width="15" height="30"/><rect fill="%23696969" x="140" y="140" width="120" height="20"/></svg>');
+        .wiata-las-2 { 
+            background-image: url('images/wiata-las-2.jpg');
         }
         
-        .long-terrace { 
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%234a90e2" width="400" height="280"/><rect fill="%2300bfff" x="0" y="220" width="400" height="60"/><rect fill="%23d4a574" x="20" y="170" width="360" height="40"/><rect fill="%238b4513" x="30" y="140" width="12" height="30"/><rect fill="%238b4513" x="70" y="140" width="12" height="30"/><rect fill="%238b4513" x="110" y="140" width="12" height="30"/><rect fill="%238b4513" x="150" y="140" width="12" height="30"/><rect fill="%238b4513" x="190" y="140" width="12" height="30"/><rect fill="%238b4513" x="230" y="140" width="12" height="30"/><rect fill="%238b4513" x="270" y="140" width="12" height="30"/><rect fill="%238b4513" x="310" y="140" width="12" height="30"/><rect fill="%238b4513" x="350" y="140" width="12" height="30"/><rect fill="%23696969" x="10" y="120" width="380" height="20"/></svg>');
+        .zadaszenie-taras-1 { 
+            background-image: url('images/zadaszenie-taras-1.jpg');
         }
 
-        .roof-work { 
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%2387ceeb" width="400" height="280"/><rect fill="%23f5f5dc" x="100" y="150" width="200" height="80"/><polygon fill="%238b4513" points="80,150 200,80 320,150"/><rect fill="%23cd853f" x="190" y="180" width="20" height="50"/><rect fill="%234169e1" x="120" y="170" width="25" height="25"/><rect fill="%234169e1" x="255" y="170" width="25" height="25"/><rect fill="%23228b22" x="0" y="230" width="400" height="50"/></svg>');
+        .zadaszenie-taras-2 { 
+            background-image: url('images/zadaszenie-taras-2.jpg');
         }
     </style>
 </head>
@@ -723,10 +817,6 @@
                     <div class="trust-number">100%</div>
                     <div class="trust-text">Zadowolonych Klientów</div>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-number">24/7</div>
-                    <div class="trust-text">Wsparcie Techniczne</div>
-                </div>
             </div>
         </div>
     </section>
@@ -774,57 +864,87 @@
             <p class="section-subtitle">Poznaj nasze najlepsze projekty i przekonaj się o jakości naszej pracy</p>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <div class="portfolio-image terrace-1">
-                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    <div class="portfolio-image zadaszenie-taras-1">
+                        <div class="portfolio-overlay">
+                            <div>Zadaszenie Tarasu</div>
+                            <div class="portfolio-buttons">
+                                <a href="tel:786197716" class="portfolio-btn call-btn">📞 Zadzwoń</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3>Eleganckie Zadaszenie Tarasu</h3>
-                        <p>Zadaszenie tarasu 370x630 cm z drewna świerkowego z pokryciem z płyt poliwęglanowych mlecznych. Kolorystyka i rodzaj pokrycia według wyboru klienta - idealne połączenie funkcjonalności i estetyki.</p>
+                        <h3>Nowoczesne Zadaszenie Tarasu</h3>
+                        <p>Eleganckie zadaszenie tarasu z drewna świerkowego z pokryciem z płyt poliwęglanowych mlecznych. Zadaszenie 370x630 cm wykonane z dbałością o każdy szczegół - idealne połączenie funkcjonalności i estetyki.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image house-extension">
-                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    <div class="portfolio-image zadaszenie-taras-2">
+                        <div class="portfolio-overlay">
+                            <div>Pergola Drewniana</div>
+                            <div class="portfolio-buttons">
+                                <a href="tel:786197716" class="portfolio-btn call-btn">📞 Zadzwoń</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3>Rozbudowa Domu Parterowego</h3>
-                        <p>Kompleksowa rozbudowa domu parterowego. Solidne fundamenty, ściany z bloczków gazobetonu, drewniana konstrukcja dachu wykonana zgodnie z najwyższymi standardami budowlanymi.</p>
+                        <h3>Zadaszenie z Pergolą</h3>
+                        <p>Spektakularne zadaszenie pergolowe z widocznymi belkami konstrukcyjnymi. Profesjonalne wykonanie drewnianej konstrukcji zapewniające trwałość i elegancki wygląd przez lata.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image garage-roof">
-                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    <div class="portfolio-image taras-nad-woda-1">
+                        <div class="portfolio-overlay">
+                            <div>Taras nad Wodą</div>
+                            <div class="portfolio-buttons">
+                                <a href="tel:786197716" class="portfolio-btn call-btn">📞 Zadzwoń</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3>Zadaszenie na Dwa Samochody</h3>
-                        <p>Przestronna wiata garażowa na dwa stanowiska. Drewniana konstrukcja z solidnym pokryciem dachowym, estetyczne wykończenie zapewniające długotrwałą ochronę pojazdów.</p>
+                        <h3>Długi Taras nad Wodą</h3>
+                        <p>Wyjątkowy taras 3x12 metrów nad stawem. Dekoracyjna balustrada z wzorem krzyżowym, zadaszenie pergolowe z kratownicą - harmonijne połączenie z otoczeniem naturalnym.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image forest-garage">
-                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    <div class="portfolio-image taras-nad-woda-2">
+                        <div class="portfolio-overlay">
+                            <div>Konstrukcja Dekoracyjna</div>
+                            <div class="portfolio-buttons">
+                                <a href="tel:786197716" class="portfolio-btn call-btn">📞 Zadzwoń</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Taras z Dekoracyjną Konstrukcją</h3>
+                        <p>Piękny przykład połączenia funkcjonalności z estetyką. Solidna drewniana konstrukcja dachu z widocznymi elementami dekoracyjnymi, harmonijnie wpisująca się w krajobraz.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image wiata-las-1">
+                        <div class="portfolio-overlay">
+                            <div>Wiata Garażowa</div>
+                            <div class="portfolio-buttons">
+                                <a href="tel:786197716" class="portfolio-btn call-btn">📞 Zadzwoń</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
                         <h3>Wiata z Pomieszczeniem Gospodarczym</h3>
-                        <p>Wiata na samochód 580x350 cm z dodatkowym pomieszczeniem gospodarczym 210x210 cm. Idealne rozwiązanie funkcjonalne łączące ochronę pojazdu z miejscem na narzędzia.</p>
+                        <p>Wiata na samochód 580x350 cm z dodatkowym pomieszczeniem gospodarczym 210x210 cm. Idealne rozwiązanie funkcjonalne w środowisku leśnym - ochrona pojazdu i miejsce na narzędzia.</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image long-terrace">
-                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    <div class="portfolio-image wiata-las-2">
+                        <div class="portfolio-overlay">
+                            <div>Wiata w Lesie</div>
+                            <div class="portfolio-buttons">
+                                <a href="tel:786197716" class="portfolio-btn call-btn">📞 Zadzwoń</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3>Spektakularny Taras nad Wodą</h3>
-                        <p>Długi taras 3x12 metrów nad stawem. Dekoracyjna balustrada z wzorem krzyżowym, zadaszenie pergolowe z kratownicą - harmonijne połączenie z otoczeniem naturalnym.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image roof-work">
-                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Profesjonalne Więźby Dachowe</h3>
-                        <p>Precyzyjne wykonanie więźb dachowych. Wysokiej jakości drewno, fachowe połączenia, zgodność z projektem budowlanym - gwarancja trwałości na lata.</p>
+                        <h3>Harmonijne Wpisanie w Krajobraz</h3>
+                        <p>Doskonały przykład jak konstrukcja budowlana może harmonijnie wpisać się w naturalne otoczenie. Wiata garażowa z pomieszczeniem gospodarczym w otoczeniu lasu.</p>
                     </div>
                 </div>
             </div>
@@ -836,24 +956,44 @@
             <h2 class="section-title">Skontaktuj się z nami</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Zadzwoń i umów się na bezpłatną wycenę</h3>
-                    <p>Oferujemy profesjonalne doradztwo i konkurencyjne ceny. Każdy projekt traktujemy indywidualnie, dostosowując go do Twoich potrzeb i budżetu.</p>
-                    <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <div>
-                            <strong>Zadzwoń teraz:</strong><br>
-                            <span style="font-size: 1.2rem; color: var(--golden-yellow);">786 197 716</span><br>
-                            <span style="font-size: 1.2rem; color: var(--golden-yellow);">506 115 906</span>
-                        </div>
+                    <h3>Skontaktuj się z nami już dziś!</h3>
+                    <p>Oferujemy bezpłatne wyceny i profesjonalne doradztwo. Każdy projekt realizujemy z pełnym zaangażowaniem i dbałością o najwyższą jakość.</p>
+                    
+                    <div class="contact-buttons">
+                        <a href="tel:786197716" class="contact-btn">
+                            <span style="font-size: 1.5rem;">📞</span>
+                            <div>
+                                <div>786 197 716</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Zadzwoń teraz</div>
+                            </div>
+                        </a>
+                        <a href="tel:506115906" class="contact-btn">
+                            <span style="font-size: 1.5rem;">📞</span>
+                            <div>
+                                <div>506 115 906</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Drugi numer</div>
+                            </div>
+                        </a>
                     </div>
+
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/48786197716?text=Dzień%20dobry!%20Interesuje%20mnie%20wycena%20usług%20budowlanych.%20Proszę%20o%20kontakt." class="contact-btn whatsapp">
+                            <span style="font-size: 1.5rem;">💬</span>
+                            <div>
+                                <div>WhatsApp</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Napisz na WhatsApp</div>
+                            </div>
+                        </a>
+                    </div>
+
                     <div class="contact-item">
                         <span class="contact-icon">🏢</span>
                         <div>
-                            <strong>Firma:</strong><br>
-                            K.I.G. KLECZAJ<br>
+                            <strong>K.I.G. KLECZAJ</strong><br>
                             Usługi Budowlane
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <span class="contact-icon">⚒️</span>
                         <div>
@@ -864,51 +1004,17 @@
                             • Zadaszenia i wiaty
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <span class="contact-icon">⭐</span>
                         <div>
-                            <strong>Gwarancje:</strong><br>
+                            <strong>Gwarancje jakości:</strong><br>
                             • Bezpłatna wycena<br>
                             • Konkurencyjne ceny<br>
-                            • Terminowość<br>
-                            • Jakość wykonania
+                            • Terminowość realizacji<br>
+                            • Wieloletnie doświadczenie
                         </div>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Wyślij zapytanie online</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Imię i nazwisko *</label>
-                            <input type="text" id="name" name="name" required placeholder="Podaj swoje imię i nazwisko">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefon *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="Podaj numer telefonu">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Twój adres email (opcjonalnie)">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Rodzaj usługi</label>
-                            <select id="service" name="service" style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; background: #f8f9fa;">
-                                <option value="">Wybierz rodzaj usługi</option>
-                                <option value="budowa">Budowa domu</option>
-                                <option value="rozbudowa">Rozbudowa domu</option>
-                                <option value="wiezby">Więźby dachowe</option>
-                                <option value="altany">Altany ogrodowe</option>
-                                <option value="zadaszenia">Zadaszenia tarasów</option>
-                                <option value="wiaty">Wiaty garażowe</option>
-                                <option value="inne">Inne</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Opis projektu *</label>
-                            <textarea id="message" name="message" placeholder="Opisz swój projekt - rodzaj usługi, wymiary, lokalizacja, termin realizacji..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Wyślij zapytanie - Oddzwonimy w 24h</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -958,18 +1064,24 @@
             });
         });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
+        // Portfolio project details functionality
+        function showProjectDetails(serviceType, projectName) {
+            // Create phone call with pre-filled message
+            const phoneNumber = '786197716';
+            const message = `Dzień dobry! Interesuje mnie realizacja podobna do "${projectName}". Proszę o kontakt w sprawie wyceny.`;
             
-            if (name && phone) {
-                alert(`Dziękujemy ${name}! Otrzymaliśmy Twoje zapytanie dotyczące: ${service || 'usług budowlanych'}. Skontaktujemy się z Tobą pod numerem ${phone} w ciągu 24 godzin.`);
-                this.reset();
+            // Try to call directly first
+            const phoneCall = confirm(`Zadzwonić teraz w sprawie: "${projectName}"?\n\nKliknij OK aby zadzwonić na numer 786 197 716\nLub Anuluj aby wysłać wiadomość WhatsApp`);
+            
+            if (phoneCall) {
+                // Direct phone call
+                window.location.href = `tel:${phoneNumber}`;
+            } else {
+                // WhatsApp message
+                const whatsappUrl = `https://wa.me/48${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
             }
-        });
+        }
 
         // Animation on scroll
         const observerOptions = {
