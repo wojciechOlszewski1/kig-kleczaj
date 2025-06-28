@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.I.G. KLECZAJ - Usługi Budowlane | Budowa, Rozbudowa, Więźby Dachowe</title>
+    <meta name="description" content="Profesjonalne usługi budowlane - budowa i rozbudowa domów, więźby i poszycia dachowe, altany ogrodowe, zadaszenia tarasów. Doświadczenie i jakość.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #C41E3A;
+            --warm-orange: #FF6B35;
+            --golden-yellow: #FFD23F;
+            --deep-red: #8B0000;
+            --warm-gray: #2C2C2C;
+            --light-gray: #F8F9FA;
+            --white: #FFFFFF;
+            --success-green: #28A745;
+            --shadow: rgba(196, 30, 58, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--warm-gray);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--deep-red) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--golden-yellow), var(--warm-orange));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-red);
+            box-shadow: 0 4px 15px rgba(255, 210, 63, 0.3);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--golden-yellow);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-sub {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a:hover {
+            background: var(--golden-yellow);
+            color: var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 210, 63, 0.4);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--golden-yellow);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--warm-orange) 50%, var(--golden-yellow) 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="tools" patternUnits="userSpaceOnUse" width="100" height="100" patternTransform="rotate(45)"><rect width="100" height="100" fill="none"/><path d="M20,20 L30,30 M70,70 L80,80" stroke="rgba(255,255,255,0.1)" stroke-width="2"/><circle cx="50" cy="50" r="3" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1200" height="600" fill="url(%23tools)"/></svg>') center/cover;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            font-weight: 800;
+        }
+
+        .hero-content .highlight {
+            color: var(--golden-yellow);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            animation: slideInUp 1s ease 0.2s both;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease 0.4s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary {
+            background: var(--golden-yellow);
+            color: var(--primary-red);
+            box-shadow: 0 6px 20px rgba(255, 210, 63, 0.4);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 210, 63, 0.6);
+            background: #FFE066;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.3);
+        }
+
+        /* Trust Indicators */
+        .trust-indicators {
+            padding: 60px 0;
+            background: var(--light-gray);
+            border-top: 4px solid var(--golden-yellow);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .trust-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-text {
+            color: var(--warm-gray);
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--warm-gray);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(196, 30, 58, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(196, 30, 58, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--warm-orange), var(--golden-yellow));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(196, 30, 58, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--warm-orange), var(--golden-yellow));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #fef7f0 0%, #fff5ee 100%);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(196, 30, 58, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(196, 30, 58, 0.2);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.9), rgba(255, 107, 53, 0.9));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-content h3 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .portfolio-content p {
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--warm-orange) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--warm-gray);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-info h3 {
+            color: var(--golden-yellow);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--golden-yellow);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--golden-yellow);
+            margin-right: 1.5rem;
+            width: 30px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: var(--primary-red);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--warm-gray);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--warm-orange);
+            background: white;
+            box-shadow: 0 0 15px rgba(255, 107, 53, 0.2);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-red), var(--warm-orange));
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--golden-yellow);
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-red);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 20px var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo-main {
+                font-size: 1.4rem;
+            }
+
+            .logo-sub {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Portfolio images */
+        .terrace-1 { 
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%234a90e2;stop-opacity:1" /><stop offset="100%" style="stop-color:%2387ceeb;stop-opacity:1" /></linearGradient></defs><rect fill="url(%23sky)" width="400" height="280"/><rect fill="%23228b22" x="0" y="220" width="400" height="60"/><rect fill="%23d4a574" x="50" y="170" width="300" height="50"/><rect fill="%238b4513" x="60" y="130" width="15" height="40"/><rect fill="%238b4513" x="120" y="130" width="15" height="40"/><rect fill="%238b4513" x="180" y="130" width="15" height="40"/><rect fill="%238b4513" x="240" y="130" width="15" height="40"/><rect fill="%238b4513" x="300" y="130" width="15" height="40"/><rect fill="%23696969" x="40" y="110" width="320" height="20"/><rect fill="rgba(255,255,255,0.7)" x="50" y="115" width="300" height="10"/></svg>');
+        }
+        
+        .house-extension { 
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%2387ceeb" width="400" height="280"/><rect fill="%23f5f5dc" x="50" y="120" width="150" height="100"/><rect fill="%23696969" x="50" y="100" width="150" height="20"/><rect fill="%23d4a574" x="220" y="140" width="100" height="80"/><rect fill="%238b4513" x="230" y="160" width="15" height="40"/><rect fill="%238b4513" x="255" y="160" width="15" height="40"/><rect fill="%238b4513" x="280" y="160" width="15" height="40"/><rect fill="%23228b22" x="0" y="220" width="400" height="60"/></svg>');
+        }
+        
+        .garage-roof { 
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%2387ceeb" width="400" height="280"/><rect fill="%238b4513" x="50" y="170" width="20" height="60"/><rect fill="%238b4513" x="130" y="170" width="20" height="60"/><rect fill="%238b4513" x="250" y="170" width="20" height="60"/><rect fill="%238b4513" x="330" y="170" width="20" height="60"/><rect fill="%23696969" x="30" y="150" width="340" height="20"/><rect fill="%23228b22" x="0" y="230" width="400" height="50"/></svg>');
+        }
+        
+        .forest-garage { 
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%2387ceeb" width="400" height="280"/><rect fill="%23228b22" x="0" y="200" width="400" height="80"/><circle fill="%23006400" cx="50" cy="170" r="30"/><circle fill="%23006400" cx="350" cy="160" r="25"/><circle fill="%23006400" cx="100" cy="140" r="20"/><rect fill="%23d4a574" x="150" y="180" width="100" height="50"/><rect fill="%238b4513" x="160" y="160" width="15" height="30"/><rect fill="%238b4513" x="185" y="160" width="15" height="30"/><rect fill="%238b4513" x="210" y="160" width="15" height="30"/><rect fill="%238b4513" x="235" y="160" width="15" height="30"/><rect fill="%23696969" x="140" y="140" width="120" height="20"/></svg>');
+        }
+        
+        .long-terrace { 
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%234a90e2" width="400" height="280"/><rect fill="%2300bfff" x="0" y="220" width="400" height="60"/><rect fill="%23d4a574" x="20" y="170" width="360" height="40"/><rect fill="%238b4513" x="30" y="140" width="12" height="30"/><rect fill="%238b4513" x="70" y="140" width="12" height="30"/><rect fill="%238b4513" x="110" y="140" width="12" height="30"/><rect fill="%238b4513" x="150" y="140" width="12" height="30"/><rect fill="%238b4513" x="190" y="140" width="12" height="30"/><rect fill="%238b4513" x="230" y="140" width="12" height="30"/><rect fill="%238b4513" x="270" y="140" width="12" height="30"/><rect fill="%238b4513" x="310" y="140" width="12" height="30"/><rect fill="%238b4513" x="350" y="140" width="12" height="30"/><rect fill="%23696969" x="10" y="120" width="380" height="20"/></svg>');
+        }
+
+        .roof-work { 
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280"><rect fill="%2387ceeb" width="400" height="280"/><rect fill="%23f5f5dc" x="100" y="150" width="200" height="80"/><polygon fill="%238b4513" points="80,150 200,80 320,150"/><rect fill="%23cd853f" x="190" y="180" width="20" height="50"/><rect fill="%234169e1" x="120" y="170" width="25" height="25"/><rect fill="%234169e1" x="255" y="170" width="25" height="25"/><rect fill="%23228b22" x="0" y="230" width="400" height="50"/></svg>');
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo-container">
+                <div class="logo-icon">KIG</div>
+                <div class="logo-text">
+                    <div class="logo-main">K.I.G. KLECZAJ</div>
+                    <div class="logo-sub">Usługi Budowlane</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Strona główna</a></li>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#portfolio">Realizacje</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Budujemy <span class="highlight">Twoje Marzenia</span></h1>
+                <p>Profesjonalne usługi budowlane z wieloletnim doświadczeniem. Budowa, rozbudowa, więźby dachowe i altany ogrodowe wykonane z pasją do perfekcji.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button cta-primary pulse">Bezpłatna Wycena</a>
+                    <a href="#portfolio" class="cta-button cta-secondary">Zobacz Realizacje</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-indicators">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-number">15+</div>
+                    <div class="trust-text">Lat Doświadczenia</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">200+</div>
+                    <div class="trust-text">Zrealizowanych Projektów</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">100%</div>
+                    <div class="trust-text">Zadowolonych Klientów</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-number">24/7</div>
+                    <div class="trust-text">Wsparcie Techniczne</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Nasze Specjalizacje</h2>
+            <p class="section-subtitle">Oferujemy kompleksowe usługi budowlane z gwarancją najwyższej jakości wykonania</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Budowa i Rozbudowa Domów</h3>
+                    <p>Kompleksowe usługi budowlane - od fundamentów po dach. Rozbudowy domów jednorodzinnych z zachowaniem najwyższych standardów jakości i terminowości.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Więźby i Poszycia Dachowe</h3>
+                    <p>Profesjonalne wykonanie konstrukcji dachowych. Więźby drewniane, poszycia, pokrycia dachowe - solidność na lata z gwarancją jakości.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Altany Ogrodowe</h3>
+                    <p>Piękne konstrukcje ogrodowe - altany, pergole, zadaszenia tarasów. Harmonia funkcjonalności i estetyki w Twoim ogrodzie.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Wiaty Garażowe</h3>
+                    <p>Zadaszenia dla samochodów, wiaty garażowe różnych rozmiarów. Ochrona Twojego pojazdu w każdych warunkach atmosferycznych.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Gotowy na rozpoczęcie projektu?</h2>
+            <p>Skontaktuj się z nami już dziś i otrzymaj bezpłatną wycenę swojego projektu budowlanego</p>
+            <a href="#contact" class="cta-button cta-primary pulse">Zadzwoń Teraz: 786 197 716</a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Nasze Realizacje</h2>
+            <p class="section-subtitle">Poznaj nasze najlepsze projekty i przekonaj się o jakości naszej pracy</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image terrace-1">
+                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Eleganckie Zadaszenie Tarasu</h3>
+                        <p>Zadaszenie tarasu 370x630 cm z drewna świerkowego z pokryciem z płyt poliwęglanowych mlecznych. Kolorystyka i rodzaj pokrycia według wyboru klienta - idealne połączenie funkcjonalności i estetyki.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image house-extension">
+                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Rozbudowa Domu Parterowego</h3>
+                        <p>Kompleksowa rozbudowa domu parterowego. Solidne fundamenty, ściany z bloczków gazobetonu, drewniana konstrukcja dachu wykonana zgodnie z najwyższymi standardami budowlanymi.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image garage-roof">
+                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Zadaszenie na Dwa Samochody</h3>
+                        <p>Przestronna wiata garażowa na dwa stanowiska. Drewniana konstrukcja z solidnym pokryciem dachowym, estetyczne wykończenie zapewniające długotrwałą ochronę pojazdów.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image forest-garage">
+                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Wiata z Pomieszczeniem Gospodarczym</h3>
+                        <p>Wiata na samochód 580x350 cm z dodatkowym pomieszczeniem gospodarczym 210x210 cm. Idealne rozwiązanie funkcjonalne łączące ochronę pojazdu z miejscem na narzędzia.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image long-terrace">
+                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Spektakularny Taras nad Wodą</h3>
+                        <p>Długi taras 3x12 metrów nad stawem. Dekoracyjna balustrada z wzorem krzyżowym, zadaszenie pergolowe z kratownicą - harmonijne połączenie z otoczeniem naturalnym.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image roof-work">
+                        <div class="portfolio-overlay">Zobacz szczegóły realizacji</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Profesjonalne Więźby Dachowe</h3>
+                        <p>Precyzyjne wykonanie więźb dachowych. Wysokiej jakości drewno, fachowe połączenia, zgodność z projektem budowlanym - gwarancja trwałości na lata.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Skontaktuj się z nami</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Zadzwoń i umów się na bezpłatną wycenę</h3>
+                    <p>Oferujemy profesjonalne doradztwo i konkurencyjne ceny. Każdy projekt traktujemy indywidualnie, dostosowując go do Twoich potrzeb i budżetu.</p>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Zadzwoń teraz:</strong><br>
+                            <span style="font-size: 1.2rem; color: var(--golden-yellow);">786 197 716</span><br>
+                            <span style="font-size: 1.2rem; color: var(--golden-yellow);">506 115 906</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🏢</span>
+                        <div>
+                            <strong>Firma:</strong><br>
+                            K.I.G. KLECZAJ<br>
+                            Usługi Budowlane
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">⚒️</span>
+                        <div>
+                            <strong>Nasze specjalizacje:</strong><br>
+                            • Budowa i rozbudowa domów<br>
+                            • Więźby i poszycia dachowe<br>
+                            • Altany ogrodowe<br>
+                            • Zadaszenia i wiaty
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">⭐</span>
+                        <div>
+                            <strong>Gwarancje:</strong><br>
+                            • Bezpłatna wycena<br>
+                            • Konkurencyjne ceny<br>
+                            • Terminowość<br>
+                            • Jakość wykonania
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Wyślij zapytanie online</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Imię i nazwisko *</label>
+                            <input type="text" id="name" name="name" required placeholder="Podaj swoje imię i nazwisko">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Podaj numer telefonu">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Twój adres email (opcjonalnie)">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Rodzaj usługi</label>
+                            <select id="service" name="service" style="width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; background: #f8f9fa;">
+                                <option value="">Wybierz rodzaj usługi</option>
+                                <option value="budowa">Budowa domu</option>
+                                <option value="rozbudowa">Rozbudowa domu</option>
+                                <option value="wiezby">Więźby dachowe</option>
+                                <option value="altany">Altany ogrodowe</option>
+                                <option value="zadaszenia">Zadaszenia tarasów</option>
+                                <option value="wiaty">Wiaty garażowe</option>
+                                <option value="inne">Inne</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Opis projektu *</label>
+                            <textarea id="message" name="message" placeholder="Opisz swój projekt - rodzaj usługi, wymiary, lokalizacja, termin realizacji..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Wyślij zapytanie - Oddzwonimy w 24h</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>K.I.G. KLECZAJ</h4>
+                    <p>Profesjonalne usługi budowlane z wieloletnim doświadczeniem. Budowa, rozbudowa, więźby dachowe, altany ogrodowe.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>📞 786 197 716<br>📞 506 115 906</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Usługi</h4>
+                    <p>Budowa domów<br>Rozbudowy<br>Więźby dachowe<br>Altany ogrodowe</p>
+                </div>
+            </div>
+            <hr style="border: 1px solid #333; margin: 2rem 0;">
+            <p>&copy; 2025 K.I.G. KLECZAJ - Usługi Budowlane. Wszystkie prawa zastrzeżone.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">Profesjonalne usługi budowlane • Budowa • Rozbudowa • Więźby dachowe • Altany ogrodowe</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            
+            if (name && phone) {
+                alert(`Dziękujemy ${name}! Otrzymaliśmy Twoje zapytanie dotyczące: ${service || 'usług budowlanych'}. Skontaktujemy się z Tobą pod numerem ${phone} w ciągu 24 godzin.`);
+                this.reset();
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and portfolio items
+        document.querySelectorAll('.service-card, .portfolio-item, .trust-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Counter animation for trust indicators
+        function animateCounters() {
+            const counters = document.querySelectorAll('.trust-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                const suffix = counter.textContent.includes('+') ? '+' : 
+                             counter.textContent.includes('%') ? '%' : '';
+                let current = 0;
+                const increment = target / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + suffix;
+                    }
+                }, 40);
+            });
+        }
+
+        // Trigger counter animation when trust section is visible
+        const trustSection = document.querySelector('.trust-indicators');
+        const trustObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    trustObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        if (trustSection) {
+            trustObserver.observe(trustSection);
+        }
+    </script>
+</body>
+</html>
